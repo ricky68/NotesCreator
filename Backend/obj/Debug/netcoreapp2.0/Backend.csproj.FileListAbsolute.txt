@@ -1,0 +1,11 @@
+C:\projects\NotesCreator\NotesCreator\bin\Debug\netcoreapp2.0\Backend.deps.json
+C:\projects\NotesCreator\NotesCreator\bin\Debug\netcoreapp2.0\Backend.runtimeconfig.json
+C:\projects\NotesCreator\NotesCreator\bin\Debug\netcoreapp2.0\Backend.runtimeconfig.dev.json
+C:\projects\NotesCreator\NotesCreator\bin\Debug\netcoreapp2.0\Backend.dll
+C:\projects\NotesCreator\NotesCreator\bin\Debug\netcoreapp2.0\Backend.pdb
+C:\projects\NotesCreator\NotesCreator\obj\Debug\netcoreapp2.0\Backend.csproj.CoreCompileInputs.cache
+C:\projects\NotesCreator\NotesCreator\obj\Debug\netcoreapp2.0\Backend.AssemblyInfoInputs.cache
+C:\projects\NotesCreator\NotesCreator\obj\Debug\netcoreapp2.0\Backend.AssemblyInfo.cs
+C:\projects\NotesCreator\NotesCreator\obj\Debug\netcoreapp2.0\Backend.dll
+C:\projects\NotesCreator\NotesCreator\obj\Debug\netcoreapp2.0\Backend.pdb
+C:\projects\NotesCreator\NotesCreator\obj\Debug\netcoreapp2.0\Backend.csprojResolveAssemblyReference.cache
