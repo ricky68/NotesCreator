@@ -5091,6 +5091,16 @@
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
+      },
+      "NotesCreatorDTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/NotesCreatorDTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NotesCreatorDTO.dll": {}
+        }
       }
     }
   },
@@ -13226,6 +13236,11 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
+    },
+    "NotesCreatorDTO/1.0.0": {
+      "type": "project",
+      "path": "../NotesDTO/NotesCreatorDTO.csproj",
+      "msbuildProject": "../NotesDTO/NotesCreatorDTO.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13233,6 +13248,7 @@
       "Microsoft.AspNetCore.All >= 2.0.5",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.2",
+      "NotesCreatorDTO >= 1.0.0",
       "Swashbuckle.AspNetCore >= 1.1.0"
     ]
   },
@@ -13246,11 +13262,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\projects\\NotesCreator\\NotesCreator\\Backend.csproj",
+      "projectUniqueName": "C:\\projects\\NotesCreator\\Backend\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "C:\\projects\\NotesCreator\\NotesCreator\\Backend.csproj",
+      "projectPath": "C:\\projects\\NotesCreator\\Backend\\Backend.csproj",
       "packagesPath": "C:\\Users\\ricky\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\NotesCreator\\NotesCreator\\obj\\",
+      "outputPath": "C:\\projects\\NotesCreator\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13268,7 +13284,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\projects\\NotesCreator\\NotesDTO\\NotesCreatorDTO.csproj": {
+              "projectPath": "C:\\projects\\NotesCreator\\NotesDTO\\NotesCreatorDTO.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -9,3 +9,16 @@ C:\projects\NotesCreator\NotesCreator\obj\Debug\netcoreapp2.0\Backend.AssemblyIn
 C:\projects\NotesCreator\NotesCreator\obj\Debug\netcoreapp2.0\Backend.dll
 C:\projects\NotesCreator\NotesCreator\obj\Debug\netcoreapp2.0\Backend.pdb
 C:\projects\NotesCreator\NotesCreator\obj\Debug\netcoreapp2.0\Backend.csprojResolveAssemblyReference.cache
+C:\projects\NotesCreator\Backend\bin\Debug\netcoreapp2.0\Backend.deps.json
+C:\projects\NotesCreator\Backend\bin\Debug\netcoreapp2.0\Backend.runtimeconfig.json
+C:\projects\NotesCreator\Backend\bin\Debug\netcoreapp2.0\Backend.runtimeconfig.dev.json
+C:\projects\NotesCreator\Backend\bin\Debug\netcoreapp2.0\Backend.dll
+C:\projects\NotesCreator\Backend\bin\Debug\netcoreapp2.0\Backend.pdb
+C:\projects\NotesCreator\Backend\obj\Debug\netcoreapp2.0\Backend.csprojResolveAssemblyReference.cache
+C:\projects\NotesCreator\Backend\obj\Debug\netcoreapp2.0\Backend.csproj.CoreCompileInputs.cache
+C:\projects\NotesCreator\Backend\obj\Debug\netcoreapp2.0\Backend.AssemblyInfoInputs.cache
+C:\projects\NotesCreator\Backend\obj\Debug\netcoreapp2.0\Backend.AssemblyInfo.cs
+C:\projects\NotesCreator\Backend\obj\Debug\netcoreapp2.0\Backend.dll
+C:\projects\NotesCreator\Backend\obj\Debug\netcoreapp2.0\Backend.pdb
+C:\projects\NotesCreator\Backend\bin\Debug\netcoreapp2.0\NotesCreatorDTO.dll
+C:\projects\NotesCreator\Backend\bin\Debug\netcoreapp2.0\NotesCreatorDTO.pdb

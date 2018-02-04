@@ -10,57 +10,57 @@ using Backend.Models;
 namespace Backend.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Notes")]
-    public class NotesController : Controller
+    [Route("api/Consultants")]
+    public class ConsultantsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public NotesController(ApplicationDbContext context)
+        public ConsultantsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Notes
+        // GET: api/Consultants
         [HttpGet]
-        public IEnumerable<Note> GetNotes()
+        public IEnumerable<Consultant> GetConsultants()
         {
-            return _context.Notes;
+            return _context.Consultants;
         }
 
-        // GET: api/Notes/5
+        // GET: api/Consultants/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetNote([FromRoute] int id)
+        public async Task<IActionResult> GetConsultant([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var note = await _context.Notes.SingleOrDefaultAsync(m => m.ID == id);
+            var consultant = await _context.Consultants.SingleOrDefaultAsync(m => m.ID == id);
 
-            if (note == null)
+            if (consultant == null)
             {
                 return NotFound();
             }
 
-            return Ok(note);
+            return Ok(consultant);
         }
 
-        // PUT: api/Notes/5
+        // PUT: api/Consultants/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutNote([FromRoute] int id, [FromBody] Note note)
+        public async Task<IActionResult> PutConsultant([FromRoute] int id, [FromBody] Consultant consultant)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != note.ID)
+            if (id != consultant.ID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(note).State = EntityState.Modified;
+            _context.Entry(consultant).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +68,7 @@ namespace Backend.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!NoteExists(id))
+                if (!ConsultantExists(id))
                 {
                     return NotFound();
                 }
@@ -81,45 +81,45 @@ namespace Backend.Controllers
             return NoContent();
         }
 
-        // POST: api/Notes
+        // POST: api/Consultants
         [HttpPost]
-        public async Task<IActionResult> PostNote([FromBody] Note note)
+        public async Task<IActionResult> PostConsultant([FromBody] Consultant consultant)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.Notes.Add(note);
+            _context.Consultants.Add(consultant);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetNote", new { id = note.ID }, note);
+            return CreatedAtAction("GetConsultant", new { id = consultant.ID }, consultant);
         }
 
-        // DELETE: api/Notes/5
+        // DELETE: api/Consultants/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteNote([FromRoute] int id)
+        public async Task<IActionResult> DeleteConsultant([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var note = await _context.Notes.SingleOrDefaultAsync(m => m.ID == id);
-            if (note == null)
+            var consultant = await _context.Consultants.SingleOrDefaultAsync(m => m.ID == id);
+            if (consultant == null)
             {
                 return NotFound();
             }
 
-            _context.Notes.Remove(note);
+            _context.Consultants.Remove(consultant);
             await _context.SaveChangesAsync();
 
-            return Ok(note);
+            return Ok(consultant);
         }
 
-        private bool NoteExists(int id)
+        private bool ConsultantExists(int id)
         {
-            return _context.Notes.Any(e => e.ID == id);
+            return _context.Consultants.Any(e => e.ID == id);
         }
     }
 }
