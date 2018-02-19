@@ -1,0 +1,13 @@
+C:\projects\NotesCreator\Frontend\bin\Debug\netcoreapp2.0\Frontend.deps.json
+C:\projects\NotesCreator\Frontend\bin\Debug\netcoreapp2.0\Frontend.runtimeconfig.json
+C:\projects\NotesCreator\Frontend\bin\Debug\netcoreapp2.0\Frontend.runtimeconfig.dev.json
+C:\projects\NotesCreator\Frontend\bin\Debug\netcoreapp2.0\Frontend.dll
+C:\projects\NotesCreator\Frontend\bin\Debug\netcoreapp2.0\NotesCreatorDTO.dll
+C:\projects\NotesCreator\Frontend\bin\Debug\netcoreapp2.0\NotesCreatorDTO.pdb
+C:\projects\NotesCreator\Frontend\obj\Debug\netcoreapp2.0\Frontend.csprojResolveAssemblyReference.cache
+C:\projects\NotesCreator\Frontend\obj\Debug\netcoreapp2.0\Frontend.csproj.CoreCompileInputs.cache
+C:\projects\NotesCreator\Frontend\obj\Debug\netcoreapp2.0\Frontend.AssemblyInfoInputs.cache
+C:\projects\NotesCreator\Frontend\obj\Debug\netcoreapp2.0\Frontend.AssemblyInfo.cs
+C:\projects\NotesCreator\Frontend\bin\Debug\netcoreapp2.0\Frontend.pdb
+C:\projects\NotesCreator\Frontend\obj\Debug\netcoreapp2.0\Frontend.dll
+C:\projects\NotesCreator\Frontend\obj\Debug\netcoreapp2.0\Frontend.pdb

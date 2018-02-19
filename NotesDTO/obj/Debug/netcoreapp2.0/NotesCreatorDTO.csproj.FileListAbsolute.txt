@@ -1,0 +1,11 @@
+C:\projects\NotesCreator\NotesDTO\bin\Debug\netcoreapp2.0\NotesCreatorDTO.deps.json
+C:\projects\NotesCreator\NotesDTO\bin\Debug\netcoreapp2.0\NotesCreatorDTO.dll
+C:\projects\NotesCreator\NotesDTO\bin\Debug\netcoreapp2.0\NotesCreatorDTO.pdb
+C:\projects\NotesCreator\NotesDTO\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.dll
+C:\projects\NotesCreator\NotesDTO\bin\Debug\netcoreapp2.0\Microsoft.EntityFrameworkCore.xml
+C:\projects\NotesCreator\NotesDTO\obj\Debug\netcoreapp2.0\NotesCreatorDTO.csproj.CoreCompileInputs.cache
+C:\projects\NotesCreator\NotesDTO\obj\Debug\netcoreapp2.0\NotesCreatorDTO.AssemblyInfoInputs.cache
+C:\projects\NotesCreator\NotesDTO\obj\Debug\netcoreapp2.0\NotesCreatorDTO.AssemblyInfo.cs
+C:\projects\NotesCreator\NotesDTO\obj\Debug\netcoreapp2.0\NotesCreatorDTO.dll
+C:\projects\NotesCreator\NotesDTO\obj\Debug\netcoreapp2.0\NotesCreatorDTO.pdb
+C:\projects\NotesCreator\NotesDTO\obj\Debug\netcoreapp2.0\NotesCreatorDTO.csprojResolveAssemblyReference.cache
