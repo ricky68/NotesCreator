@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.DependencyInjection;
+using NotesCreatorDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,6 @@ namespace Backend.Models
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -21,18 +21,16 @@ namespace Backend.Models
                 .HasOne(c => c.ConsultantName)
                 .WithMany()
                 .HasForeignKey("ConsultantNameID")
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.ClientSetNull);
 
             modelBuilder.Entity<Note>()
                 .HasOne(c => c.ActionName)
                 .WithMany()
                 .HasForeignKey("ActionNameID")
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.ClientSetNull);
         }
         public DbSet<Note> Notes { get; set; }
         public DbSet<Consultant> Consultants { get; set; }
-
-
     }
 
     public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>

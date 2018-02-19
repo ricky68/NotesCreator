@@ -16,6 +16,7 @@ namespace Backend.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Active = table.Column<bool>(nullable: false),
+                    Discriminator = table.Column<string>(nullable: false),
                     FullName = table.Column<string>(maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -29,7 +30,7 @@ namespace Backend.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ActionDate = table.Column<DateTime>(nullable: true),
+                    ActionDate = table.Column<DateTime>(nullable: false),
                     ActionNameID = table.Column<int>(nullable: false),
                     ActionNote = table.Column<string>(nullable: true),
                     Callback = table.Column<bool>(nullable: false),
@@ -52,7 +53,7 @@ namespace Backend.Migrations
                         column: x => x.ConsultantNameID,
                         principalTable: "Consultants",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

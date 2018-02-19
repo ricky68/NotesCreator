@@ -6,12 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 using System;
 
 namespace Backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180204215926_initial")]
+    [Migration("20180219222332_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,28 +22,12 @@ namespace Backend.Migrations
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Backend.Models.Consultant", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<bool>("Active");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasMaxLength(50);
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Consultants");
-                });
-
             modelBuilder.Entity("Backend.Models.Note", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime?>("ActionDate");
+                    b.Property<DateTime>("ActionDate");
 
                     b.Property<int>("ActionNameID");
 
@@ -69,17 +54,46 @@ namespace Backend.Migrations
                     b.ToTable("Notes");
                 });
 
+            modelBuilder.Entity("NotesCreatorDTO.ConsultantDTO", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired();
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Consultants");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("ConsultantDTO");
+                });
+
+            modelBuilder.Entity("Backend.Models.Consultant", b =>
+                {
+                    b.HasBaseType("NotesCreatorDTO.ConsultantDTO");
+
+
+                    b.ToTable("Consultants");
+
+                    b.HasDiscriminator().HasValue("Consultant");
+                });
+
             modelBuilder.Entity("Backend.Models.Note", b =>
                 {
-                    b.HasOne("Backend.Models.Consultant", "ActionName")
+                    b.HasOne("NotesCreatorDTO.ConsultantDTO", "ActionName")
                         .WithMany()
-                        .HasForeignKey("ActionNameID")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("ActionNameID");
 
-                    b.HasOne("Backend.Models.Consultant", "ConsultantName")
+                    b.HasOne("NotesCreatorDTO.ConsultantDTO", "ConsultantName")
                         .WithMany()
-                        .HasForeignKey("ConsultantNameID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ConsultantNameID");
                 });
 #pragma warning restore 612, 618
         }
