@@ -30,24 +30,14 @@ namespace Backend.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ActionDate = table.Column<DateTime>(nullable: false),
-                    ActionNameID = table.Column<int>(nullable: false),
-                    ActionNote = table.Column<string>(nullable: true),
-                    Callback = table.Column<bool>(nullable: false),
                     ConsultantNameID = table.Column<int>(nullable: false),
                     CreatedDate = table.Column<DateTime>(nullable: false),
-                    Note = table.Column<string>(nullable: false),
-                    Urgent = table.Column<bool>(nullable: false)
+                    Discriminator = table.Column<string>(nullable: false),
+                    Note = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Notes", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_Notes_Consultants_ActionNameID",
-                        column: x => x.ActionNameID,
-                        principalTable: "Consultants",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Notes_Consultants_ConsultantNameID",
                         column: x => x.ConsultantNameID,
@@ -56,10 +46,47 @@ namespace Backend.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "NoteActionDTO",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ActionDate = table.Column<DateTime>(nullable: false),
+                    ActionNameID = table.Column<int>(nullable: false),
+                    ActionNote = table.Column<string>(nullable: true),
+                    Callback = table.Column<bool>(nullable: false),
+                    Discriminator = table.Column<string>(nullable: false),
+                    NoteID = table.Column<int>(nullable: false),
+                    Urgent = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NoteActionDTO", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_NoteActionDTO_Consultants_ActionNameID",
+                        column: x => x.ActionNameID,
+                        principalTable: "Consultants",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_NoteActionDTO_Notes_NoteID",
+                        column: x => x.NoteID,
+                        principalTable: "Notes",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
-                name: "IX_Notes_ActionNameID",
-                table: "Notes",
+                name: "IX_NoteActionDTO_ActionNameID",
+                table: "NoteActionDTO",
                 column: "ActionNameID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_NoteActionDTO_NoteID",
+                table: "NoteActionDTO",
+                column: "NoteID",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Notes_ConsultantNameID",
@@ -69,6 +96,9 @@ namespace Backend.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "NoteActionDTO");
+
             migrationBuilder.DropTable(
                 name: "Notes");
 

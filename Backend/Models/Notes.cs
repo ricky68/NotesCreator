@@ -11,6 +11,7 @@ namespace Backend.Models
     {
     }
 
+    public class NoteAction : NotesCreatorDTO.NoteActionDTO { }
     public class Consultant : NotesCreatorDTO.ConsultantDTO
     {
     }

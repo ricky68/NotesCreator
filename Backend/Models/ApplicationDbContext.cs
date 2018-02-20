@@ -17,13 +17,13 @@ namespace Backend.Models
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Note>()
+            modelBuilder.Entity<NoteDTO>()
                 .HasOne(c => c.ConsultantName)
                 .WithMany()
                 .HasForeignKey("ConsultantNameID")
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
-            modelBuilder.Entity<Note>()
+            modelBuilder.Entity<NoteActionDTO>()
                 .HasOne(c => c.ActionName)
                 .WithMany()
                 .HasForeignKey("ActionNameID")
@@ -31,6 +31,8 @@ namespace Backend.Models
         }
         public DbSet<Note> Notes { get; set; }
         public DbSet<Consultant> Consultants { get; set; }
+
+        public DbSet<NoteAction> NoteAction { get; set; }
     }
 
     public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
